@@ -23,7 +23,7 @@ Di dalam aplikasi `main` perlu untuk mendefinisikan model yang menggambarkan ent
 
 Dalam berkas `views.py`, dibuat sebuah fungsi bernama view `(show_main)` yang menerima parameter _request_ dari pengguna. Fungsi ini menggunakan class dari model untuk melakukan kueri ke _database_ dan hasilnya disimpan dalam variabel data_main. Setelah itu, berkas `main.html` akan di-render, dan data akan dimasukkan ke dalam konteks yang nantinya akan ditampilkan di halaman HTML.
 
-### Mengatur rute (routing) agar fungsi yang telah dibuat dalam berkas `views.py` dapat diakses
+### Mengatur rute (`routing`) agar fungsi yang telah dibuat dalam berkas `views.py` dapat diakses
 
 Pengaturan rute ini dilakukan dengan menambahkan `path('main/', include('main.urls'))` pada berkas `urls.py` dalam proyek vending_machine. Ini akan mengarahkan rute ke berkas `urls.py` di aplikasi main. Selanjutnya, berkas `urls.py` ini akan menjalankan fungsi view `show_main` yang terdapat dalam berkas `views.py`.
 
@@ -31,8 +31,9 @@ Pengaturan rute ini dilakukan dengan menambahkan `path('main/', include('main.ur
 
 Pemetaan data dalam template dilakukan ketika fungsi view dalam berkas `views.py` merender berkas main.html. Saat proses render berlangsung, data akan dihubungkan dengan sintaksis template Django, yaitu {{ data }}. Data yang ada dalam konteks akan diekstraksi dan ditampilkan di halaman HTML dengan menggunakan perulangan untuk mengambil data dari _database_ yang akan ditampilkan.
 
-### _Deployment_ ke Adaptable
-Menghubungkan akun Adaptable dengan GitHub dan memilih repositori proyek vending-machine. Ikuti panduan yang disediakan oleh platform tersebut untuk memulai proses _deployment_ aplikasi.
+### _Deployment_ ke Adaptable dan membuat `README.md` 
+Menghubungkan akun Adaptable dengan GitHub dan memilih repositori proyek vending-machine. Ikuti panduan yang disediakan oleh platform tersebut untuk memulai proses _deployment_ aplikasi. Membuat `README.md` yang berisi point-point penjelasan terkait proses implementasi dan jawaban dari pertanyaan yang diberikan.
+
 
 
 Selama proses implementasi, saya memastikan untuk memahami setiap langkah dengan baik, menyesuaikannya dengan kebutuhan proyek, dan menangani setiap detail sesuai dengan tutorial. Dengan cara ini, proyek dapat berjalan dengan lancar dan memenuhi semua persyaratan dari checklist yang telah diberikan.
