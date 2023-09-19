@@ -4,7 +4,7 @@
 - [Assignment 3](#assignment-3)
 
 
-## Assignment 2 💡
+💡## Assignment 2 
 
 Deployed URL: [vendream-machine](https://vendream-machine.adaptable.app/main/)
 
@@ -73,7 +73,7 @@ Perbedaan utama adalah penggunaan konteks aplikasi dan bagaimana tampilan dan lo
 
 
 
-## Assignment 3 📌
+📌## Assignment 3 
 
 
 ## Perbedaan Metode POST dan GET dalam _Form_ Django
