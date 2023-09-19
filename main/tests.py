@@ -4,8 +4,8 @@ from main.models import Item
 
 class mainTest(TestCase):
     def setUp(self):
-        Item.objects.create(name="Good day", amount="8", description="Funtastic Mocaccino Coffee")
-        Item.objects.create(name="Fanta", amount=7, description="Orange flavoured")
+        Item.objects.create(name="Good day", amount="8", description="Funtastic Mocaccino Coffee", price=11000, category="Beverage")
+        Item.objects.create(name="Fanta", amount=7, description="Orange flavoured", price=9000, category="Beverage")
 
     def test_item_is_in_stock(self):
         """Items in vending machine that correctly identified"""

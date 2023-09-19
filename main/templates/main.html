@@ -1,8 +1,44 @@
-<h1>Vendream Machine</h1>
+{% extends 'base.html' %}
 
-<h5>Name: </h5>
-<p>{{ name }}</p> 
-<h5>ID: </h5>
-<p>{{ id }}</p> 
-<h5>Class: </h5>
-<p>{{ class }}</p> 
+{% block content %}
+    <h1>Vendream Machine</h1>
+
+    <h5>Name:</h5>
+    <p>{{name}}</p>
+
+    <h5>ID: </h5>
+    <p>{{ id }}</p> 
+
+    <h5>Class:</h5>
+    <p>{{class}}</p>
+
+    <h3>Vending Machine Items:</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price (IDR)</th>
+            <th>Amount</th>
+            <th>Description</th>
+        </tr>
+
+        {% for item in items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.category }}</td>
+                <td>{{ item.formatted_price }}</td>
+                <td>{{ item.amount }}</td>
+                <td>{{ item.description }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <br />
+    
+    <a href="{% url 'main:create_item' %}">
+        <button>
+            Add New Product
+        </button>
+    </a>
+    
+{% endblock content %}

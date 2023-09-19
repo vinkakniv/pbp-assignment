@@ -1,4 +1,10 @@
-# Assignment 2 PBP 2023/24 - Vinka Alrezky As (2206820200)
+# PBP 2023/24 - Vinka Alrezky As (2206820200)
+
+- [Assignment 2](#assignment-2)
+- [Assignment 3](#assignment-3)
+
+
+## Assignment 2
 
 Deployed URL: [vendream-machine](https://vendream-machine.adaptable.app/main/)
 
@@ -62,4 +68,43 @@ MVC (_Model-View-Controller_), MVT (_Model-View-Template_), dan MVVM (_Model-Vie
 - MVVM digunakan dalam aplikasi berbasis klien modern dan memisahkan _Model_ (data dan logika), _View_ (tampilan), dan _ViewModel_ (logika tampilan dan interaksi).
 
 Perbedaan utama adalah penggunaan konteks aplikasi dan bagaimana tampilan dan logika dipisahkan, dengan MVC dan MVT lebih umum digunakan dalam aplikasi web tradisional, sedangkan MVVM digunakan dalam aplikasi berbasis klien modern.
+
+
+
+## Assignment 3
+
+
+## Perbedaan Metode POST dan GET dalam _Form_ Django
+
+Dalam Django _form_, perbedaan utama antara metode POST dan GET terletak pada bagaimana data dikirimkan ke server. Metode GET digunakan untuk mengambil data dari server dan data tersebut ditambahkan ke URL sebagai parameter _query_. Data ini dapat terlihat pada bar alamat browser dan biasanya digunakan untuk operasi yang bersifat non-sensitif, seperti pencarian atau penyaringan data.
+
+Sebaliknya, metode POST digunakan untuk mengirimkan data ke server, seringkali untuk tindakan yang mengubah atau membuat data. Data yang dikirimkan melalui metode POST tidak terlihat dalam URL, sehingga lebih aman, terutama untuk informasi yang bersifat sensitif. Metode ini umumnya digunakan untuk formulir yang melibatkan informasi rahasia atau memiliki efek samping pada server, seperti mengirimkan data untuk membuat atau memperbarui catatan.
+
+
+## Perbedaan Utama antara XML, JSON, dan HTML dalam Pengiriman Data
+
+Dalam pengiriman data, XML lebih sesuai untuk konteks yang membutuhkan struktur data yang kompleks dan fleksibel dengan validasi yang ketat. JSON biasanya lebih cocok untuk pertukaran data antara aplikasi web dan server karena ringkas, mudah diproses, dan lebih efisien dalam penggunaan _bandwidth_. HTML, di sisi lain, digunakan untuk membuat tampilan halaman web dan bukan untuk pengiriman data terstruktur antara aplikasi.
+
+
+## Keunggulan Penggunaan JSON dalam Pertukaran Data Aplikasi Web Modern
+
+JSON sering digunakan dalam pertukaran data antara aplikasi web modern karena sintaksisnya yang sederhana dan mudah dibaca, efisiensinya dalam penggunaan _bandwidth_, kompatibilitas dengan berbagai bahasa pemrograman, serta fleksibilitasnya dalam merepresentasikan berbagai jenis data. Format ini juga cocok untuk pengembangan _RESTful API_, memungkinkan komunikasi yang efisien antara server dan klien dalam ekosistem web. Dengan berbagai keunggulan ini, JSON telah menjadi pilihan yang cocok utama untuk pertukaran data yang efisien dan efektif dalam dunia aplikasi web saat ini.
+
+
+## Implementasi
+
+
+## Postman
+
+### HTML
+![](https://imgur.com/XYtaXzU.png)
+### XML
+![](https://imgur.com/T56PXnw.png)
+### JSON
+![](https://imgur.com/lkPlJVl.png)
+### XML _by_ ID
+![](https://imgur.com/jq8bJml.png)
+### JSON _by_ ID
+![](https://imgur.com/g7dU9Iv.png)
+
 
