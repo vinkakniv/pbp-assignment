@@ -1,10 +1,10 @@
-# PBP 2023/24 - Vinka Alrezky As (2206820200)
+# PBP A - Vinka Alrezky As (2206820200)
 
 - [Assignment 2](#assignment-2)
 - [Assignment 3](#assignment-3)
 
 
-## Assignment 2
+# Assignment 2 
 
 Deployed URL: [vendream-machine](https://vendream-machine.adaptable.app/main/)
 
@@ -71,8 +71,9 @@ Perbedaan utama adalah penggunaan konteks aplikasi dan bagaimana tampilan dan lo
 
 
 
-## Assignment 3
 
+
+# Assignment 3 
 
 ## Perbedaan Metode POST dan GET dalam _Form_ Django
 
@@ -93,6 +94,39 @@ JSON sering digunakan dalam pertukaran data antara aplikasi web modern karena si
 
 ## Implementasi
 
+#### Langkah 1: Membuat Input Form
+
+Membuat Direktori Templates: Pertama, saya membuat direktori `templates` di dalam direktori utama proyek saya. Tujuannya adalah untuk menyimpan template HTML yang akan digunakan dalam aplikasi.
+
+Membuat Template Dasar `base.html`: Di dalam direktori `templates`, saya membuat berkas `base.html` sebagai template dasar. Template ini akan digunakan sebagai kerangka untuk semua halaman web dalam proyek.
+
+Membuat Berkas `forms.py`: Selanjutnya, saya membuat berkas `forms.py` di dalam aplikasi `main`. Di dalam berkas ini, saya mendefinisikan form Django yang disebut `ItemForm` agar pengguna dapat mengisi data objek model `Item`. Saya juga menambahkan fitur _category_ dan _price_ agar dapat disesuaikan dengan kebutuhan. Selain itu, saya memodifikasi berkas `models.py` untuk menyesuaikan perubahan ini.
+
+Template untuk Input Data `create_item.html`: Kemudian, saya membuat berkas `create_item.html` di dalam direktori `templates`. Template ini digunakan untuk menampilkan form input data `Item`. Saya menggunakan `ItemForm` yang telah saya definisikan sebelumnya dalam template ini. Pengguna dapat mengisi data objek `Item` melalui form ini.
+
+Membuat View `create_item`: Saya juga membuat view `create_item` di dalam berkas `views.py`. View ini bertugas menangani permintaan POST yang diterima dari form input. Saya menggunakan `ItemForm` untuk memvalidasi data yang dikirimkan melalui form dan menyimpannya ke database jika data tersebut valid.
+
+#### Langkah 2: Menambahkan 5 Fungsi Views
+
+Saya menambahkan 5 fungsi views dalam aplikasi `main` untuk menampilkan data `Item` dalam format yang berbeda, yaitu:
+
+- show_main: Menampilkan data `Item` dalam format HTML.
+- show_xml: Menampilkan data `Item` dalam format XML.
+- show_json: Menampilkan data `Item` dalam format JSON.
+- show_xml_by_id: Menampilkan data `Item` berdasarkan ID dalam format XML.
+- show_json_by_id: Menampilkan data `Item` berdasarkan ID dalam format JSON. 
+
+#### Langkah 3: Membuat Routing URL
+
+Untuk menghubungkan setiap view dengan URL yang sesuai, saya melakukan konfigurasi routing URL di berkas "urls.py" dalam aplikasi `main`, yang sesuai dengan panduan tutorial yang ada. 
+
+- path('xml/', show_xml, name='show_xml'),
+- path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id'),
+- path('json/', show_json, name='show_json'),
+- path('json/<int:id>/', show_json_by_id, name='show_json_by_id')
+
+Langkah terakhir, saya melakukan push berkas-berkas ke GitHub.
+
 
 ## Postman
 
@@ -106,5 +140,7 @@ JSON sering digunakan dalam pertukaran data antara aplikasi web modern karena si
 ![](https://imgur.com/jq8bJml.png)
 ### JSON _by_ ID
 ![](https://imgur.com/g7dU9Iv.png)
+
+
 
 
