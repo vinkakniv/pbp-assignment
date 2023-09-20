@@ -110,20 +110,20 @@ Membuat View `create_item`: Saya juga membuat view `create_item` di dalam berkas
 
 Saya menambahkan 5 fungsi views dalam aplikasi `main` untuk menampilkan data `Item` dalam format yang berbeda, yaitu:
 
-- show_main: Menampilkan data `Item` dalam format HTML.
-- show_xml: Menampilkan data `Item` dalam format XML.
-- show_json: Menampilkan data `Item` dalam format JSON.
-- show_xml_by_id: Menampilkan data `Item` berdasarkan ID dalam format XML.
-- show_json_by_id: Menampilkan data `Item` berdasarkan ID dalam format JSON. 
+- `show_main`: Menampilkan data `Item` dalam format HTML.
+- `show_xml`: Menampilkan data `Item` dalam format XML.
+- `show_json`: Menampilkan data `Item` dalam format JSON.
+- `show_xml_by_id`: Menampilkan data `Item` berdasarkan ID dalam format XML.
+- `show_json_by_id`: Menampilkan data `Item` berdasarkan ID dalam format JSON. 
 
 #### Langkah 3: Membuat Routing URL
 
 Untuk menghubungkan setiap view dengan URL yang sesuai, saya melakukan konfigurasi routing URL di berkas "urls.py" dalam aplikasi `main`, yang sesuai dengan panduan tutorial yang ada. 
 
-- path('xml/', show_xml, name='show_xml'),
-- path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id'),
-- path('json/', show_json, name='show_json'),
-- path('json/<int:id>/', show_json_by_id, name='show_json_by_id')
+- `path('xml/', show_xml, name='show_xml')`,
+- `path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id')`,
+- `path('json/', show_json, name='show_json')`,
+- `path('json/<int:id>/', show_json_by_id, name='show_json_by_id')`
 
 Langkah terakhir, saya melakukan push berkas-berkas ke GitHub.
 
