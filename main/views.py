@@ -28,10 +28,7 @@ def create_item(request):
 
     context = {'form': form}
     return render(request, "create_item.html", context)
-
-def show_xml(request):
-    data = Item.objects.all()
-    return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
+    
 
 def show_xml(request: HttpRequest) -> HttpResponse:
     data = Item.objects.all()
