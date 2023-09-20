@@ -137,9 +137,9 @@ Langkah terakhir, saya melakukan push berkas-berkas ke GitHub.
 ### JSON
 ![](https://imgur.com/lkPlJVl.png)
 ### XML _by_ ID
-![](https://imgur.com/jq8bJml.png)
+![](https://imgur.com/undefined.png)
 ### JSON _by_ ID
-![](https://imgur.com/g7dU9Iv.png)
+![](https://imgur.com/OAyUwMi.png)
 
 
 
