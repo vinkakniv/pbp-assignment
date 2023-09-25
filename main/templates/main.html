@@ -1,24 +1,68 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% block content %}
-    <h1>Vendream Machine</h1>
+<!DOCTYPE html>
+<head>
+    <title>{{ app_name }}</title>
+    <meta charset="UTF-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+    <style>
+        @font-face {
+        font-family: "default-font";
+        src: url('fonts/Gogh-ExtraBold.woff') format(woff);            
+        }
 
-    <h5>Name:</h5>
-    <p>{{name}}</p>
+        .app-name {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            font-family: "default-font";
+        }
 
-    <h5>ID: </h5>
-    <p>{{ id }}</p> 
+        .data {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            font-family: "default-font";
+        }
 
-    <h5>Class:</h5>
-    <p>{{class}}</p>
+        .data h5, data p {
+            margin: 5px;
+        }
 
-    <h3>Vending Machine Items:</h3>
+        table, th, td{
+            border: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-name">
+        <h1>{{ app_name }}</h1>
+    </div>
+    <div class="data">
+        <h5>Name: </h5>
+        <p>{{ name }}</p> 
+        <h5>Student ID: </h5>
+        <p>{{ id }}</p> 
+        <h5>Class: </h5>
+        <p>{{ class }}</p> 
+    </div>
+    <div class="message">
+        <p>Terdapat {{items|length}} item pada {{ app_name }}</p>
+    </div>
     <table>
         <tr>
             <th>Name</th>
             <th>Category</th>
-            <th>Price (IDR)</th>
+            <th>Total Price</th>
             <th>Amount</th>
+            <th></th>
             <th>Description</th>
         </tr>
 
@@ -28,7 +72,20 @@
                 <td>{{ item.category }}</td>
                 <td>{{ item.formatted_price }}</td>
                 <td>{{ item.amount }}</td>
+                <td>
+                    <a href="{% url 'main:dec_amount' item.id %}">
+                        <button>-</button>
+                    </a>
+                    <a href="{% url 'main:inc_amount' item.id %}">
+                        <button>+</button>
+                    </a>
+                </td>
                 <td>{{ item.description }}</td>
+                                <td>
+                    <a href="{% url 'main:delete' item.id %}" onclick="return confirm('Are you sure?');">
+                        <button>Delete</button>
+                    </a>
+                </td>
             </tr>
         {% endfor %}
     </table>
@@ -41,4 +98,10 @@
         </button>
     </a>
     
+    <a href="{% url 'main:logout' %}">
+        <button>
+            Logout
+        </button>
+    </a>
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
 {% endblock content %}
