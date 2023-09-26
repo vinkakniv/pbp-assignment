@@ -2,7 +2,7 @@
 
 - [Assignment 2](#assignment-2)
 - [Assignment 3](#assignment-3)
-
+- [Assignment 4](#assignment-4)
 
 # Assignment 2 
 
@@ -143,4 +143,86 @@ Langkah terakhir, saya melakukan push berkas-berkas ke GitHub.
 
 
 
+
+# Assignment 4
+
+
+## Django `UserCreationForm`
+
+`UserCreationForm` adalah salah satu fitur bawaan yang disediakan oleh kelas ModelForm dalam Django, digunakan untuk membuat _form_ pembuatan pengguna baru yang dapat diintegrasikan ke dalam aplikasi web. _Form_ ini terdiri dari tiga bidang utama: _username_, _password_, dan _password confirmation_, yang berguna untuk mengonfirmasi kata sandi. `UserCreationForm` dapat diimport dari modul `django.contrib.auth.forms` untuk memanfaatkan fungsionalitasnya. Salah satu keunggulan utamanya adalah kemudahan penggunaan dan integrasi yang baik dengan sistem otentikasi Django. Form ini juga dapat disesuaikan sesuai dengan kebutuhan aplikasi, namun memiliki beberapa keterbatasan, seperti tidak mendukung fitur-fitur tambahan secara langsung dan tampilan baku yang mungkin perlu disesuaikan. 
+
+
+## Autentikasi dan Otorisasi dalam Konteks Django
+
+Autentikasi dalam Django adalah proses untuk memverifikasi identitas pengguna yang mencoba masuk ke dalam aplikasi web. Autentikasi dilakukan dengan memasukkan informasi seperti _username_ dan kata sandi yang benar. Tujuannya adalah memastikan bahwa hanya pengguna yang memiliki hak akses yang benar yang dapat masuk ke dalam akun dan menjaga keamanan informasi pribadi. Otorisasi, di sisi lain, adalah tentang menentukan apa yang diperbolehkan atau tidak diperbolehkan oleh pengguna setelah berhasil melakukan autentikasi
+
+Autentikasi dan otorisasi sangat penting dalam menjaga keamanan dan privasi data pengguna dalam aplikasi web. Autentikasi memastikan hanya pengguna sah yang bisa mengakses akun, sementara otorisasi mengendalikan hak akses untuk mencegah akses yang tidak sah dan memastikan pengguna hanya bisa melakukan tindakan sesuai izin. Kombinasi keduanya adalah kunci utama dalam menjaga keamanan aplikasi web dan melindungi pengguna dari risiko keamanan.
+
+
+## _Cookies_ dalam Konteks Aplikasi Web
+
+_Cookies_ dalam konteks aplikasi web adalah sejumlah kecil data yang disimpan di _browser user_ ketika mereka berinteraksi dengan sebuah situs web. Fungsinya adalah untuk menyimpan informasi yang dapat diakses oleh server web ketika _user_ kembali ke situs tersebut.
+
+Django menggunakan _cookies_ untuk mengelola data sesi _user_ melalui modul `django.contrib.sessions.middleware.SessionMiddleware`. Prosesnya dimulai saat _user_ mengunjungi situs web Django, di mana server web menghasilkan sebuah _session cookie_ dengan ID unik. _Cookie_ ini kemudian dikirim ke _browser user_, dan _browser_ akan menyimpannya. Setiap kali _user__ mengirim permintaan ke server, _session cookie_ akan disertakan dalam permintaan tersebut, yang memungkinkan server untuk mengidentifikasi _user_ dan mengambil data sesi yang sesuai. 
+
+
+## Penggunaan _Cookies_
+
+Penggunaan _cookies_ dalam pengembangan web memiliki sejumlah risiko potensial yang perlu diwaspadai. Secara default, keamanan _cookies_ tidak terjamin atau terancam, namun risikonya sangat tergantung pada bagaimana penggunaan _cookies_ diimplementasikan dan jenis informasi yang disimpan dalamnya. Salah satu risiko utama adalah potensi kebocoran data sensitif jika cookies tersebut tidak dienkripsi dengan baik.
+
+
+## Implementasi
+
+### Langkah 1: Mengimplementasikan Fungsi Registrasi, Login, dan Logout:
+
+Pertama, saya membuat tiga fungsi baru dalam `views.py`:
+
+Fungsi Registrasi (`register`):
+    Fungsi `register` bertujuan untuk memungkinkan pengguna untuk membuat akun baru. Saya menggunakan `UserCreationForm` yang telah disediakan oleh Django untuk menangani proses pembuatan akun. Fungsi ini mengelola POST request, melakukan validasi form, dan menyimpan data pengguna jika form valid. Setelah berhasil, pesan sukses ditampilkan kepada pengguna, dan pengguna diarahkan ke halaman login.
+
+Fungsi Login (`login_user`):
+    Fungsi login_user mengurus proses login. Saya menggunakan fungsi `authenticate` dan login yang diimpor dari Django untuk mengautentikasi pengguna dan melakukan login jika autentikasi berhasil. Jika login gagal, pesan kesalahan ditampilkan kepada pengguna.
+
+Fungsi Logout (`logout_user`):
+    Fungsi `logout_user` mengelola proses logout. Ketika pengguna logout, sesi pengguna dihapus, dan pengguna diarahkan kembali ke halaman login.
+
+### Langkah 2: Membuat Tampilan untuk Registrasi dan Login:
+
+Selanjutnya, saya membuat berkas `register.html` dan `login.html` dalam folder templates untuk tampilan registrasi dan login. Dalam tampilan ini, pengguna dapat mengisi formulir dengan informasi yang diperlukan.
+Selain itu, saya menambahkan tombol logout ke dalam berkas `main.html` agar pengguna yang telah login dapat logout dengan mudah.
+
+### Langkah 3: Menghubungkan Fungsi ke URL:
+
+Kemudian, saya menghubungkan setiap fungsi registrasi, login, dan logout ke URL yang sesuai dalam berkas `urls.py`. Hal ini memastikan bahwa pengguna dapat mengakses halaman tersebut melalui URL yang ditentukan.
+
+### Langkah 4: Autentikasi Akses ke Halaman Main:
+
+Saya juga melakukan autentikasi akses ke halaman Main agar hanya dapat diakses setelah login. Ini dilakukan dengan menambahkan kode `@login_required(login_url='/login')` di atas fungsi `show_main` dalam `views.py`. Pengguna yang belum login akan diarahkan ke halaman login terlebih dahulu.
+
+### Langkah 5: Membuat Dua Akun Pengguna dan Menambahkan Data Dummy:
+
+Saya membuat dua akun pengguna dengan _username_ dan _password_ berikut:
+
+Akun 1:
+    _username_: lidwina.jv
+    _password_: pbptest02
+
+Akun 2:
+    _username_: caressa.py
+    _password_: pbptest01
+
+Saya juga mengisi beberapa data _dummy_ ke dalam aplikasi menggunakan kedua akun tersebut.
+
+### Langkah 6: Menghubungkan Model Item dengan User:
+
+Untuk menghubungkan model Item dengan User, saya melakukan langkah-langkah berikut:
+
+- Mengimport modul User dari `django.contrib.auth.models`.
+- Menambahkan _field user_ ke dalam model Item menggunakan `ForeignKey`. Hal ini untuk mengaitkan setiap item dengan pengguna yang membuatnya.
+- Mengedit fungsi `create_item` agar Django tidak langsung menyimpan objek yang dibuat ke _database_. Ini memungkinkan untuk mengisi _field user_ dengan objek User yang sedang login sebelum menyimpannya ke _database_.
+- Mengubah fungsi `show_main` untuk menampilkan `name` yang merupakan _username_ pengguna yang sedang login.
+
+### Langkah 7: Menampilkan Detail Informasi _User_ yang Sedang Login dan Menggunakan _Cookies_:
+
+Saya mengimport modul `datetime` dan menambahkan fungsi baru dalam `login_user` yang dapat menambahkan `cookie`. `Cookies` ini digunakan untuk menyimpan informasi terkait waktu login terakhir pengguna. Informasi ini ditampilkan di halaman utama dalam elemen HTML dengan teks `"Sesi terakhir login"`. Saya juga mengubah fungsi `logout_user` untuk menghapus _cookie_ setiap kali pengguna logout.
 

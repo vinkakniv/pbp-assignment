@@ -15,14 +15,13 @@ from django.contrib import messages
 
 @login_required(login_url='/login')
 def show_main(request):
-    #items = Item.objects.all()
     items = Item.objects.filter(user=request.user)
     context = {
         'name': request.user.username,
         'id': '2206820200',
         'class': 'PBP A', 
         'items': items,
-        'last_login': request.COOKIES.get('last_login'),
+        'last_login': request.COOKIES['last_login'],
         'app_name': "Vendream Machine"
     }
 
