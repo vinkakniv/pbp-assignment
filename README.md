@@ -181,7 +181,7 @@ Fungsi Registrasi (`register`):
     Fungsi `register` bertujuan untuk memungkinkan pengguna untuk membuat akun baru. Saya menggunakan `UserCreationForm` yang telah disediakan oleh Django untuk menangani proses pembuatan akun. Fungsi ini mengelola POST request, melakukan validasi form, dan menyimpan data pengguna jika form valid. Setelah berhasil, pesan sukses ditampilkan kepada pengguna, dan pengguna diarahkan ke halaman login.
 
 Fungsi Login (`login_user`):
-    Fungsi login_user mengurus proses login. Saya menggunakan fungsi `authenticate` dan login yang diimpor dari Django untuk mengautentikasi pengguna dan melakukan login jika autentikasi berhasil. Jika login gagal, pesan kesalahan ditampilkan kepada pengguna.
+    Fungsi `login_user` mengurus proses login. Saya menggunakan fungsi authenticate dan login yang diimpor dari Django untuk mengautentikasi pengguna dan melakukan login jika autentikasi berhasil. Jika login gagal, pesan kesalahan ditampilkan kepada pengguna.
 
 Fungsi Logout (`logout_user`):
     Fungsi `logout_user` mengelola proses logout. Ketika pengguna logout, sesi pengguna dihapus, dan pengguna diarahkan kembali ke halaman login.
@@ -204,12 +204,12 @@ Saya juga melakukan autentikasi akses ke halaman Main agar hanya dapat diakses s
 Saya membuat dua akun pengguna dengan _username_ dan _password_ berikut:
 
 Akun 1:
-    _username_: lidwina.jv
-    _password_: pbptest02
+- _username_: lidwina.jv
+-  _password_: pbptest02
 
 Akun 2:
-    _username_: caressa.py
-    _password_: pbptest01
+- _username_: caressa.py
+- _password_: pbptest01
 
 Saya juga mengisi beberapa data _dummy_ ke dalam aplikasi menggunakan kedua akun tersebut.
 
