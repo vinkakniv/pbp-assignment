@@ -3,6 +3,7 @@
 - [Assignment 2](#assignment-2)
 - [Assignment 3](#assignment-3)
 - [Assignment 4](#assignment-4)
+- [Assignment 5](#assignment-5)
 
 # Assignment 2 
 
@@ -226,3 +227,82 @@ Untuk menghubungkan model Item dengan User, saya melakukan langkah-langkah berik
 
 Saya mengimport modul `datetime` dan menambahkan fungsi baru dalam `login_user` yang dapat menambahkan `cookie`. `Cookies` ini digunakan untuk menyimpan informasi terkait waktu login terakhir pengguna. Informasi ini ditampilkan di halaman utama dalam elemen HTML dengan teks `"Sesi terakhir login"`. Saya juga mengubah fungsi `logout_user` untuk menghapus _cookie_ setiap kali pengguna logout.
 
+
+
+# Assignment 5
+
+
+## Manfaat Setiap _Element Selector_ dan Waktu Penggunaan yang Tepat
+
+1. _Element Selector_:
+Manfaat: Menerapkan gaya default atau konsistensi pada elemen dengan _tag_ yang sama dalam dokumen HTML.
+Kapan Menggunakannya: Untuk memastikan tampilan seragam pada elemen-elemen dengan _tag_ yang sama.
+
+2. _ID Selector_:
+Manfaat: Mengidentifikasi elemen HTML secara unik dalam dokumen dan memungkinkan penerapan _styling_ atau perilaku yang spesifik.
+Kapan Menggunakannya: Untuk merujuk ke elemen unik dan memberikan _styling_ khusus.
+
+3. _Class Selector_:
+Manfaat: Mengelompokkan elemen yang berbeda jenis tetapi memiliki kesamaan, memungkinkan penerapan _styling_ atau perilaku yang sama.
+Kapan Menggunakannya: Saat ingin memberikan _styling_ atau perilaku serupa pada beberapa elemen dengan karakteristik yang sama.
+
+
+## HTML5 Tag
+
+Berikut adalah beberapa HTML5 Tag yang saya ketahui:
+`<html>`: Ini adalah elemen _root _ yang mendefinisikan dokumen HTML dan mengelilingi semua elemen HTML lainnya.
+`<title>`: Digunakan untuk mengatur judul halaman web yang akan ditampilkan di tab browser.
+`<body>`: Berisi konten utama halaman web yang akan terlihat oleh pengguna, termasuk teks, gambar, tabel, tombol, dan elemen lainnya.
+`<nav>`: Digunakan untuk menandai bagian navigasi pada halaman web, seperti menu navigasi.
+`<div>`: Kontainer generik yang digunakan untuk mengelompokkan dan menggaya elemen-elemen HTML lainnya, sehingga mempermudah pengaturan tampilan.
+`<a>`: Digunakan untuk membuat hyperlink atau tautan yang memungkinkan pengguna untuk menavigasi ke halaman web atau sumber daya lainnya ketika diklik.
+`<button>`: Digunakan untuk membuat tombol yang dapat diklik oleh pengguna..
+`<ul>`: Digunakan untuk membuat _unordered list_.
+`<li>`: digunakan untuk mendefinisikan item dalam daftar.
+`<table>`: Digunakan untuk membuat tabel yang digunakan untuk mengorganisir data dalam baris dan kolom.
+`<tr>`: Digunakan untuk mendefinisikan baris dalam tabel.
+`<audio>`: Memasukkan file audio dalam halaman web.
+`<video>`: Memasukkan file video dalam halaman web.
+`<header>`: Menandai bagian atas atau kepala dari suatu elemen konten.
+`<footer>`: Menandai bagian bawah atau footer dari suatu elemen konten.
+`<section>`: Mengelompokkan konten yang memiliki topik yang sama dalam suatu halaman atau elemen.
+
+
+## _Margin_ dan _Padding_
+
+_Margin_  dan _Padding_ berfungsi untuk mengatur tampilan elemen-elemen pada halaman. Perbedaan utama antara keduanya terletak pada dampaknya terhadap tata letak elemen. _Margin_  adalah ruang kosong yang ditempatkan di sekeliling elemen HTML, yang berpengaruh pada jarak antara elemen dengan elemen lainnya, baik di dalam elemen yang sama maupun elemen di sekitarnya. _Margin_  tidak memiliki latar belakang atau warna, sehingga pengaruhnya hanya pada jarak antar elemen. Sementara itu, _Padding_ adalah ruang kosong yang ditempatkan di sekitar batas dalam elemen HTML, yang memengaruhi jarak antara konten elemen dan batas dalamnya. _Padding_ dapat memiliki latar belakang atau warna tertentu, sehingga memengaruhi tampilan latar belakang elemen tersebut. Dengan kata lain, _margin_ mengatur jarak antara elemen-elemen, sementara _padding_ mengatur jarak antara konten elemen dan batas dalamnya.
+
+
+## _Framework_ CSS Tailwind dan Bootstrap
+
+Tailwind CSS memanfaatkan kelas-kelas utilitas yang telah didefinisikan sebelumnya, sehingga memberikan tingkat kontrol yang tinggi terhadap desain. Selain itu, framework ini memiliki keunggulan ukuran berkas CSS yang lebih kecil karena hanya memuat kelas-kelas utilitas yang digunakan dalam proyek, menghasilkan performa yang lebih baik. Tailwind CSS juga sangat fleksibel dan adaptatif terhadap berbagai jenis proyek, karena memungkinkan pengguna menyesuaikan desain hingga pada level terkecil sekalipun. Namun, perlu diingat bahwa Tailwind CSS memiliki kurva pembelajaran yang curam karena memerlukan pemahaman tentang kelas-kelas utilitas yang tersedia dan bagaimana menggabungkannya secara efektif.
+
+Sementara itu, Bootstrap menggunakan pendekatan yang berbeda dengan menyediakan gaya dan komponen yang telah didefinisikan sebelumnya. Ini membuatnya menjadi pilihan yang baik untuk pengembangan cepat, karena pengguna dapat langsung menggunakan komponen-komponen pra-didesainnya. Meskipun Bootstrap memiliki ukuran berkas CSS yang lebih besar karena termasuk banyak komponen yang telah terdefinisi, framework ini sering kali menghasilkan tampilan yang lebih konsisten di seluruh proyek. Keunggulan lainnya adalah proses pembelajaran lebih cepat, sehingga cocok untuk pemula yang ingin memulai dengan cepat.
+
+Pilihan antara keduanya akan sangat tergantung pada kebutuhan dan preferensi dalam proyek pengembangan web. Tailwind CSS cocok jika menginginkan tingkat kontrol yang tinggi, fleksibilitas, dan siap berinvestasi dalam pembelajaran yang lebih dalam. Sementara Bootstrap lebih sesuai jika memprioritaskan pengembangan cepat, konsistensi tampilan, dan kemudahan dalam memulai proyek
+
+
+## Implementasi
+
+### Langkah 1: _Register Page_
+Pertama, saya mulai dengan halaman Register. Saya memastikan bahwa Bootstrap sudah terhubung dengan proyek saya melalui link CDN yang saya tambahkan di file `base.html`. Untuk membuat tampilan halaman lebih menarik, saya  menggunakan komponen Bootstrap `card` untuk mengatur tampilan. Card ini memiliki header berwarna biru dengan judul "_Create Account_" yang terletak di tengah halaman. Saya mengikuti panduan Bootstrap untuk mempercantik tampilan input dengan menerapkan kelas-kelas Bootstrap seperti  `form-control `. Untuk pesan kesalahan, saya menambahkan kelas `list-group-item text-danger` pada elemen li yang berisi pesan kesalahan untuk setiap _field_. Saya juga menambahkan tautan "_Login Here_" di bawah formulir agar pengguna dapat dengan mudah mengakses halaman login.
+
+### Langkah 2: _Login Page_
+Selanjutnya, saya melakukan _customization_ pada halaman login. Sama seperti pada halaman Register, saya menggunakan `card` untuk mengatur tampilan. Saya melakukan modifikasi yang kurang lebih sama dengan halmaan register, seperti menerapkan kelas-kelas Bootsrap pada input. Dengan begitu, halaman login menjadi lebih menarik dan pengguna dapat dengan mudah berinteraksi dengan input dan tombol yang ada.
+
+### Langkah 3: _Main Page_
+Pada langkah ini, saya meningkatkan tampilan dan fungsionalitas halaman utama (_main page_) aplikasi. Saya menambahkan navbar sebagai menu navigasi utama yang mencakup informasi identitas dan tombol logout. Tampilan elemen-elemen seperti judul halaman diubah menjadi lebih menarik dengan penggunaan kelas `text-center`. Selain itu, fitur edit ditambahkan untuk memungkinkan pengguna mengedit item. Tampilan tabel yang menampilkan item saya diperbaiki dengan menerapkan kelas Bootstrap seperti `table` dan `table-striped` untuk membuatnya lebih terstruktur dan rapi. Tombol-tombol aksi seperti `Edit`, `Delete`, `+`, dan `-` diberi gaya dengan kelas-kelas Bootstrap yang konsisten seperti `btn btn-danger` dan `btn btn-primary`. Saya juga mengimplementasikan fungsi yang meminta konfirmasi saat tombol `Delete` ditekan.
+
+### Langkah 4: _Add New Item Page_ dan _Edit Item Page_
+Terakhit, saya melakukan _customization_ pada _Add New Item_ dan _Edit Item Page_. Saya menggunakan `card` untuk mengatur tampilan, kurang labih sama dengan modifikasi yang saya lakukan pada _register_ dan _login page_.
+
+### _Register Page_
+![](https://i.imgur.com/7gpiVKX.png)
+### _Login Page_
+![](https://i.imgur.com/wYuwknv.png)
+### _Main Page_
+![](https://i.imgur.com/p2NzqmQ.png)
+### _Add New Item Page_
+![](https://i.imgur.com/24u56Gl.png)
+### _Edit Item Page_
+![](https://i.imgur.com/tmAZf16.png)
