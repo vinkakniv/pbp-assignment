@@ -250,7 +250,7 @@ Saya mengimport modul `datetime` dan menambahkan fungsi baru dalam `login_user` 
 ## HTML5 Tag
 
 Berikut adalah beberapa HTML5 Tag yang saya ketahui:
-- `<html>`: Ini adalah elemen _root _ yang mendefinisikan dokumen HTML dan mengelilingi semua elemen HTML lainnya.
+- `<html>`: Ini adalah elemen _root_ yang mendefinisikan dokumen HTML dan mengelilingi semua elemen HTML lainnya.
 - `<title>`: Digunakan untuk mengatur judul halaman web yang akan ditampilkan di tab browser.
 - `<body>`: Berisi konten utama halaman web yang akan terlihat oleh pengguna, termasuk teks, gambar, tabel, tombol, dan elemen lainnya.
 - `<nav>`: Digunakan untuk menandai bagian navigasi pada halaman web, seperti menu navigasi.
