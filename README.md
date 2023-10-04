@@ -235,37 +235,37 @@ Saya mengimport modul `datetime` dan menambahkan fungsi baru dalam `login_user` 
 ## Manfaat Setiap _Element Selector_ dan Waktu Penggunaan yang Tepat
 
 1. _Element Selector_:
-Manfaat: Menerapkan gaya default atau konsistensi pada elemen dengan _tag_ yang sama dalam dokumen HTML.
-Kapan Menggunakannya: Untuk memastikan tampilan seragam pada elemen-elemen dengan _tag_ yang sama.
+- Manfaat: Menerapkan gaya default atau konsistensi pada elemen dengan _tag_ yang sama dalam dokumen HTML.
+- Kapan Menggunakannya: Untuk memastikan tampilan seragam pada elemen-elemen dengan _tag_ yang sama.
 
 2. _ID Selector_:
-Manfaat: Mengidentifikasi elemen HTML secara unik dalam dokumen dan memungkinkan penerapan _styling_ atau perilaku yang spesifik.
-Kapan Menggunakannya: Untuk merujuk ke elemen unik dan memberikan _styling_ khusus.
+- Manfaat: Mengidentifikasi elemen HTML secara unik dalam dokumen dan memungkinkan penerapan _styling_ atau perilaku yang spesifik.
+- Kapan Menggunakannya: Untuk merujuk ke elemen unik dan memberikan _styling_ khusus.
 
 3. _Class Selector_:
-Manfaat: Mengelompokkan elemen yang berbeda jenis tetapi memiliki kesamaan, memungkinkan penerapan _styling_ atau perilaku yang sama.
-Kapan Menggunakannya: Saat ingin memberikan _styling_ atau perilaku serupa pada beberapa elemen dengan karakteristik yang sama.
+- Manfaat: Mengelompokkan elemen yang berbeda jenis tetapi memiliki kesamaan, memungkinkan penerapan _styling_ atau perilaku yang sama.
+- Kapan Menggunakannya: Saat ingin memberikan _styling_ atau perilaku serupa pada beberapa elemen dengan karakteristik yang sama.
 
 
 ## HTML5 Tag
 
 Berikut adalah beberapa HTML5 Tag yang saya ketahui:
-`<html>`: Ini adalah elemen _root _ yang mendefinisikan dokumen HTML dan mengelilingi semua elemen HTML lainnya.
-`<title>`: Digunakan untuk mengatur judul halaman web yang akan ditampilkan di tab browser.
-`<body>`: Berisi konten utama halaman web yang akan terlihat oleh pengguna, termasuk teks, gambar, tabel, tombol, dan elemen lainnya.
-`<nav>`: Digunakan untuk menandai bagian navigasi pada halaman web, seperti menu navigasi.
-`<div>`: Kontainer generik yang digunakan untuk mengelompokkan dan menggaya elemen-elemen HTML lainnya, sehingga mempermudah pengaturan tampilan.
-`<a>`: Digunakan untuk membuat hyperlink atau tautan yang memungkinkan pengguna untuk menavigasi ke halaman web atau sumber daya lainnya ketika diklik.
-`<button>`: Digunakan untuk membuat tombol yang dapat diklik oleh pengguna..
-`<ul>`: Digunakan untuk membuat _unordered list_.
-`<li>`: digunakan untuk mendefinisikan item dalam daftar.
-`<table>`: Digunakan untuk membuat tabel yang digunakan untuk mengorganisir data dalam baris dan kolom.
-`<tr>`: Digunakan untuk mendefinisikan baris dalam tabel.
-`<audio>`: Memasukkan file audio dalam halaman web.
-`<video>`: Memasukkan file video dalam halaman web.
-`<header>`: Menandai bagian atas atau kepala dari suatu elemen konten.
-`<footer>`: Menandai bagian bawah atau footer dari suatu elemen konten.
-`<section>`: Mengelompokkan konten yang memiliki topik yang sama dalam suatu halaman atau elemen.
+- `<html>`: Ini adalah elemen _root _ yang mendefinisikan dokumen HTML dan mengelilingi semua elemen HTML lainnya.
+- `<title>`: Digunakan untuk mengatur judul halaman web yang akan ditampilkan di tab browser.
+- `<body>`: Berisi konten utama halaman web yang akan terlihat oleh pengguna, termasuk teks, gambar, tabel, tombol, dan elemen lainnya.
+- `<nav>`: Digunakan untuk menandai bagian navigasi pada halaman web, seperti menu navigasi.
+- `<div>`: Kontainer generik yang digunakan untuk mengelompokkan dan menggaya elemen-elemen HTML lainnya, sehingga mempermudah pengaturan tampilan.
+- `<a>`: Digunakan untuk membuat hyperlink atau tautan yang memungkinkan pengguna untuk menavigasi ke halaman web atau sumber daya lainnya ketika diklik.
+- `<button>`: Digunakan untuk membuat tombol yang dapat diklik oleh pengguna..
+- `<ul>`: Digunakan untuk membuat _unordered list_.
+- `<li>`: digunakan untuk mendefinisikan item dalam daftar.
+- `<table>`: Digunakan untuk membuat tabel yang digunakan untuk mengorganisir data dalam baris dan kolom.
+- `<tr>`: Digunakan untuk mendefinisikan baris dalam tabel.
+- `<audio>`: Memasukkan file audio dalam halaman web.
+- `<video>`: Memasukkan file video dalam halaman web.
+- `<header>`: Menandai bagian atas atau kepala dari suatu elemen konten.
+- `<footer>`: Menandai bagian bawah atau footer dari suatu elemen konten.
+- `<section>`: Mengelompokkan konten yang memiliki topik yang sama dalam suatu halaman atau elemen.
 
 
 ## _Margin_ dan _Padding_
