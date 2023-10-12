@@ -4,6 +4,7 @@
 - [Assignment 3](#assignment-3)
 - [Assignment 4](#assignment-4)
 - [Assignment 5](#assignment-5)
+- [Assignment 6](#assignment-6)
 
 # Assignment 2 
 
@@ -306,3 +307,52 @@ Terakhit, saya melakukan _customization_ pada _Add New Item_ dan _Edit Item Page
 ![](https://i.imgur.com/24u56Gl.png)
 ### _Edit Item Page_
 ![](https://i.imgur.com/tmAZf16.png)
+
+
+
+
+# Assignment 6
+
+## _Asynchronous_ dan _Synchronous Programming_
+Perbedaan antara _asynchronous programming_ dan _synchronous programming_ adalah sebagai berikut:
+
+#### _Asynchronous Programming_:
+- _Multi-threaded_ : _Asynchronous programming_ adalah pendekatan _multi-threaded_, yang memungkinkan operasi atau program berjalan secara paralel, mampu mengeksekusi beberapa tugas secara bersamaan.
+- _Non-blocking_ : Ini adalah pendekatan non-blocking, yang berarti dapat mengirimkan banyak permintaan ke server secara bersamaan tanpa harus menunggu satu tugas selesai.
+- Meningkatkan Responsivitas: _Asynchronous programming_ meningkatkan _throughput_ karena memungkinkan beberapa operasi berjalan bersamaan, memperbaiki kinerja dan responsivitas aplikasi.
+- Cocok untuk Menunggu: Biasanya digunakan dalam situasi yang melibatkan tugas-tugas yang memerlukan waktu tunggu, seperti pengambilan data dari API atau operasi I/O-bound.
+
+#### _Synchronous Programming_ :
+- _Single-threaded_ : _Synchronous programming_ adalah pendekatan single-threaded, yang berarti hanya satu operasi atau program yang dijalankan pada satu waktu.
+- _Blocking_ : Ini berarti program dapat mengirimkan banyak permintaan ke server secara bersamaan tanpa harus menunggu satu tugas selesai sebelum yang lain dimulai.
+- Lebih Mudah Dimengerti: _Synchronous programming_ cenderung lebih lambat dan berjalan dengan cara yang lebih sistematis, membuatnya lebih mudah dipahami.
+- Digunakan untuk Tugas Sederhana: Biasanya digunakan untuk tugas-tugas sederhana yang tidak memerlukan paralelisme dan dalam situasi di mana keterbacaan kode lebih penting daripada kinerja maksimum.
+
+## Penerapan Paradigma _Event-driven Programming_ dalam JavaScript dan AJAX
+_Event-driven Programming_ adalah paradigma pemrograman di mana pengguna berperan aktif dalam berinteraksi dengan halaman web. Dalam paradigma ini, pengguna memicu "peristiwa" dengan tindakan seperti mengklik tombol atau mengisi formulir. Program merespons peristiwa ini dengan menjalankan kode atau fungsi yang sesuai. Paradigma ini memungkinkan program untuk berfungsi secara dinamis dan merespons tindakan pengguna atau perubahan keadaan.
+
+Contoh penerapannya dalam tugas ini:
+```
+document.getElementById("add_button").addEventListener("click", addItem);
+
+```
+Dalam baris kode di atas, _event listener_ ditambahkan ke elemen dengan ID "add_button," yang mewakili tombol "Add Item by AJAX" di halaman web. Ketika pengguna mengklik tombol ini, peristiwa "klik" terjadi, dan sebagai respons terhadap peristiwa ini, fungsi addItem() akan dipanggil untuk mengelola pengiriman data ke server dan pembaruan tampilan halaman. 
+
+## Penerapan _Asynchronous Programming_ pada AJAX.
+Asynchronous JavaScript and XML (AJAX) adalah teknik pemrograman yang digunakan dalam pengembangan web untuk mengirim permintaan ke server dan menerima respons dari server tanpa harus memuat ulang seluruh halaman web. Ini memberikan pengalaman pengguna yang lebih responsif dan lebih interaktif. Penerapan _asynchronous programming_ pada AJAX sangat penting karena memungkinkan permintaan dan respons dapat diolah secara non-blokir, sehingga pengguna tetap dapat berinteraksi dengan halaman web tanpa mengalami penundaan yang tidak perlu.
+
+## Penerapan AJAX Menggunakan Fetch API dan library jQuery
+Fetch API adalah metode yang lebih modern dan merupakan bagian dari JavaScript standar, sehingga lebih ringan dan efisien dalam hal ukuran dan kinerja. Ini adalah pilihan yang sangat baik untuk pengembangan berbasis teknologi terbaru. Sementara itu, jQuery adalah library yang sudah ada sejak lama dan memiliki kompatibilitas lintas _browser_ yang kuat. Dengan jQuery, kita dapat dengan mudah melakukan banyak tugas seperti manipulasi DOM dan pengiriman permintaan AJAX dengan kode yang lebih singkat.
+
+## Implementasi
+Pertama, dalam proses implementasi, saya menambahkan dua fungsi baru di berkas views.py aplikasi saya, yaitu `get_product_json` dan `add_product_ajax`. Fungsi `get_product_json` bertujuan untuk mengambil data produk dari basis data, sementara `add_product_ajax` akan digunakan untuk menambahkan produk baru melalui permintaan AJAX.
+
+Selanjutnya, saya melakukan konfigurasi routing di berkas `urls.py`. Dua _endpoint_ didefinisikan, yaitu `/get-product/` yang mengarahkan ke fungsi `get_product_json` dan `/create-ajax/` yang mengarahkan ke fungsi `add_product_ajax`. Ini memungkinkan aplikasi untuk mengenali permintaan HTTP yang masuk dan mengarahkannya ke fungsi yang sesuai.
+
+Agar halaman web tampil lebih dinamis dan responsif, saya mengubah berkas `main.html` dengan memanfaatkan teknologi JavaScript dan AJAX. Dalam proses ini, saya menambahkan empat fungsi, yaitu `getItem`, `refreshItems`, `addItem`, `formattedPrice`. 
+
+Fungsi `getItem` digunakan untuk menginisiasi permintaan AJAX guna mengambil data produk. Kemudian, `refreshItems` digunakan untuk melakukan _load_ otomatis halaman web setelah data produk berhasil diambil melalui AJAX, sehingga pengguna dapat melihat pembaruan data tanpa harus merefresh seluruh halaman. `addItem` memungkinkan pengguna untuk menambahkan produk baru dengan mengirim data melalui permintaan AJAX. Sedangkan `formattedPrice` untuk mengembalikan format rupiah dari total harga. 
+
+Pada tahap yang sama, saya juga menambahkan modal ke berkas `main.html`. Saat pengguna mengeklik tombol tertentu, modal akan muncul dan menampilkan formulir penambahan item. Setelah pengguna berhasil menambahkan item, modal akan otomatis ditutup.
+
+Terakhir, saya menjalankan perintah `python manage.py collectstatic`  pada Command Prompt. 
