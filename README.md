@@ -6,10 +6,10 @@
 - [Assignment 5](#assignment-5)
 - [Assignment 6](#assignment-6)
 
-# Assignment 2 
-
 Deployed URL: [Vendream Machine](http://vinka-alrezky-tugas.pbp.cs.ui.ac.id)
 
+
+# Assignment 2 
 
 ## Implementasi
 
