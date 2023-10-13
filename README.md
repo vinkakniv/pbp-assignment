@@ -8,7 +8,7 @@
 
 # Assignment 2 
 
-Deployed URL: [vendream-machine](https://vendream-machine.adaptable.app/main/)
+Deployed URL: [Vendream Machine](http://vinka-alrezky-tugas.pbp.cs.ui.ac.id)
 
 
 ## Implementasi
