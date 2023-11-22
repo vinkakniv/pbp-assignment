@@ -1,6 +1,6 @@
 import json
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from django.contrib.auth import authenticate, login as auth_login
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.http import JsonResponse
@@ -52,22 +52,4 @@ def logout(request):
         }, status=401)
     
 
-@csrf_exempt
-def register(request):
-    if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        email = request.POST['email']
-        form = UserCreationForm(username=username, password=password, email=email)
-        if form.is_valid():
-            form.save()
-            return JsonResponse({
-                "status": True,
-                "message": "Your account has been successfully created!"
-            }, status=200)
-        else:
-            test = messages.get_messages(request)
-            return JsonResponse({
-                "status": False,
-                "message": "Register has failed! Please try again.",
-            }, status=401)
+
